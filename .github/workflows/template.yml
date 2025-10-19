@@ -2,15 +2,14 @@ name: GitHub Actions - Push - Branch Ignore Template
 run-name: Running - ${{ github.event_name }}
 on:
   push:
-    branches-ignore:
+    paths:
       - main
 jobs:
   on-push:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Comentário
         run: |
           echo "Comentário PUSH WORKFLOW - Branch Ignore"
 
-          
