@@ -1,14 +1,15 @@
-name: GitHub Actions - Push - Branch Ignore Template
+name: Github Actions - Pull Request
 run-name: Running - ${{ github.event_name }}
-on:
-  push:
-    branches-ignore:
-      - main
+
+on: 
+  pull_request:
+    branches:
+    - main
+    - branch_test
 jobs:
   on-push:
-
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Comentário
+      runs-on: ubuntu-latest
+      steps:
+      - name: comentário
         run: |
-          echo "Comentário PUSH WORKFLOW - Branch Ignore"
+          echo "PULL REQUEST WORKFLOW - Action"
