@@ -1,15 +1,10 @@
-name: GitHub Actions - Push - Branch Ignore Template
+name: Github Actions - Pull Request
 run-name: Running - ${{ github.event_name }}
-on:
-  push:
-    paths:
-    - '**.txt'
+on [pull_request]
 jobs:
   on-push:
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Comentário
+      runs-on: ubuntu-latest
+      steps:
+      - name: comentário
         run: |
-          echo "Comentário PUSH WORKFLOW - Branch Ignore"
-
+          echo "PULL REQUEST WORKFLOW - Action"
