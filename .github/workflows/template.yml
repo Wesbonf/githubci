@@ -1,6 +1,12 @@
 name: Github Actions - Pull Request
 run-name: Running - ${{ github.event_name }}
-on: [pull_request]
+
+
+on: 
+  pull_request:
+    branches:
+    - main
+    - branch_test
 jobs:
   on-push:
       runs-on: ubuntu-latest
