@@ -3,13 +3,18 @@ run-name: Running - ${{ github.event_name }}
 
 on: 
   pull_request:
+    types:
+      - opened
+      - reopened
+      - closed
     branches:
-    - main
-    - branch_test
+      - main
+      - branch_test
+
 jobs:
-  on-push:
-      runs-on: ubuntu-latest
-      steps:
+  on-pull-request:
+    runs-on: ubuntu-latest
+    steps:
       - name: comentário
         run: |
           echo "PULL REQUEST WORKFLOW - Action"
