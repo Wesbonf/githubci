@@ -1,18 +1,8 @@
 name: Github Actions - Pull Request
 run-name: Running - ${{ github.event_name }}
-
-on: 
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - closed
-    branches:
-      - main
-      - branch_test
-
+on: [workflow_dispatch]
 jobs:
-  on-pull-request:
+  on-workflow_dispatch:
     runs-on: ubuntu-latest
     steps:
       - name: comentário
