@@ -1,10 +1,22 @@
 name: Github Actions - Pull Request
 run-name: Running - ${{ github.event_name }}
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+    tags:
+      description: Selecione a tag  
+      type: choice
+      options:
+      - tag_1
+      - tag_2
+      - tag_3
+      default: 'tag_1'
+      required: true
+
 jobs:
   on-workflow_dispatch:
     runs-on: ubuntu-latest
     steps:
       - name: comentário
         run: |
-          echo "PULL REQUEST WORKFLOW - Action"
+          echo "Comentário Workflow dispatch - ${{inputs.tags}}"
