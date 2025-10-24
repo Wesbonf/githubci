@@ -1,4 +1,4 @@
-name: Github Actions - Pull Request
+name: Workflow Dispatch String
 run-name: Running - ${{ github.event_name }}
 
 on:
