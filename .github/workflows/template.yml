@@ -7,6 +7,7 @@ on:
       browser:
         description: Selecione browser
         type: string
+        required: true
 
 jobs:
   on-workflow_dispatch:
