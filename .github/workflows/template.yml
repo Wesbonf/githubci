@@ -1,13 +1,13 @@
 name: Workflow Dispatch String
 run-name: Running - ${{ github.event_name }}
 
-on:                                   # Evento que inicia o workflow
-  workflow_dispatch:                  # Execução manual no GitHub
-    inputs:                           # Campos de entrada do usuário
-      environment:                    # Nome do parâmetro
-        description: "Informe o ambiente (dev, staging, prod)"  # Texto mostrado ao usuário
-        type: string                   # Campo de texto livre
-        required: true                 # Torna o campo obrigatório
+on:                                   
+  workflow_dispatch:                  
+    inputs:                           
+      severidade:                    
+        description: "Informe o ambiente (dev, staging, prod)" 
+        type: boolean                   
+        required: true                 
 
 jobs:
   on-workflow_dispatch:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: comentário
         run: |
-          echo "Comentário Workflow dispatch - ${{ inputs.browser }}"
+          echo "Comentário Workflow dispatch - ${{ inputs.severidade  }}"
