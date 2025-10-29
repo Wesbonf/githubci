@@ -22,7 +22,7 @@ on:
 jobs:
   on-workflow_dispatch:
     runs-on: ubuntu-latest
-    stepss:
+    steps:
       - name: Comentário
         run: |
           echo "Tag: ${{inputs.tags}}"
