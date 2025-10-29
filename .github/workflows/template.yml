@@ -1,18 +1,30 @@
-name: Workflow Dispatch String
+name: Github Actions - Workflow Dispatch
 run-name: Running - ${{ github.event_name }}
-
-on:                                   
-  workflow_dispatch:                  
-    inputs:                           
-      severidade:                    
-        description: "Informe o ambiente (dev, staging, prod)" 
-        type: boolean                   
-        required: true                 
+on:
+  workflow_dispatch:
+  inputs:
+    tags:
+      description: Selecione a tag
+      type: choice
+      required: true
+      options:
+        - tag_1
+        - tag_2
+        - tag_3
+      default: 'tag_1'
+      browser:
+        description: Selecione o browser
+        type: string
+        severidade:
+          description: Funcionalidade crítica?
+          type: boolean
 
 jobs:
   on-workflow_dispatch:
     runs-on: ubuntu-latest
-    steps:
-      - name: comentário
+    stepss:
+      - name: Comentário
         run: |
-          echo "Comentário Workflow dispatch - ${{ inputs.severidade  }}"
+          echo "Tag: ${{inputs.tags}}"
+          echo "Browser: ${{inputs.browser}}"
+          echo "Severidade: ${{inputs.severidade}}"
