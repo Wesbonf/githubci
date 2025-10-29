@@ -2,22 +2,22 @@ name: Github Actions - Workflow Dispatch
 run-name: Running - ${{ github.event_name }}
 on:
   workflow_dispatch:
-  inputs:
-    tags:
-      description: Selecione a tag
-      type: choice
-      required: true
-      options:
-        - tag_1
-        - tag_2
-        - tag_3
-      default: 'tag_1'
+    inputs:
+      tags:
+        description: "Selecione a tag"
+        type: choice
+        required: true
+        options:
+          - tag_1
+          - tag_2
+          - tag_3
+        default: "tag_1"
       browser:
-        description: Selecione o browser
+        description: "Selecione o browser"
         type: string
-        severidade:
-          description: Funcionalidade crítica?
-          type: boolean
+      severidade:
+        description: "Funcionalidade crítica?"
+        type: boolean
 
 jobs:
   on-workflow_dispatch:
@@ -25,6 +25,6 @@ jobs:
     steps:
       - name: Comentário
         run: |
-          echo "Tag: ${{inputs.tags}}"
-          echo "Browser: ${{inputs.browser}}"
-          echo "Severidade: ${{inputs.severidade}}"
+          echo "Tag: ${{ github.event.inputs.tags }}"
+          echo "Browser: ${{ github.event.inputs.browser }}"
+          echo "Severidade: ${{ github.event.inputs.severidade }}"
