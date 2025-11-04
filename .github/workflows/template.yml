@@ -1,30 +1,15 @@
-name: Github Actions - Workflow Dispatch
+name: Github Actions - Cron Job
 run-name: Running - ${{ github.event_name }}
 on:
-  workflow_dispatch:
-    inputs:
-      tags:
-        description: "Selecione a tag"
-        type: choice
-        required: true
-        options:
-          - tag_1
-          - tag_2
-          - tag_3
-        default: "tag_1"
-      browser:
-        description: "Selecione o browser"
-        type: string
-      severidade:
-        description: "Funcionalidade crítica?"
-        type: boolean
+  schedule:
+    - cron: '25 23 03 11 *'
+    - cron: '2,10 11,13 * * *'
 
 jobs:
-  on-workflow_dispatch:
+  on-workflow-dispatch:
+    name: On Workflow Dispatch
     runs-on: ubuntu-latest
     steps:
-      - name: Comentário
+      - name: Executando
         run: |
-          echo "Tag: ${{ github.event.inputs.tags }}"
-          echo "Browser: ${{ github.event.inputs.browser }}"
-          echo "Severidade: ${{ github.event.inputs.severidade }}"
+          echo "Hello, World"
