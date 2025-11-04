@@ -1,9 +1,9 @@
 name: Github Actions - Cron Job
 run-name: Running - ${{ github.event_name }}
+
 on:
   schedule:
-    - cron: '25 23 03 11 *'
-    - cron: '2,10 11,13 * * *'
+    - cron: '33 02 * * *'
 
 jobs:
   on-workflow-dispatch:
