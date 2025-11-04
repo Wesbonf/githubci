@@ -3,7 +3,7 @@ run-name: Running - ${{ github.event_name }}
 
 on:
   schedule:
-    - cron: '42 02 * * *'  # 23:42 BRT
+    - cron: '59 2 4 11 *'  # 23:59 BRT do dia 03/11/2025;
 
 jobs:
   on-workflow-dispatch:
