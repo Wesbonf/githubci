@@ -1,15 +1,10 @@
-name: Github Actions - Cron Job
-run-name: Running - ${{ github.event_name }}
-
-on:
-  schedule:
-    - cron: '59 2 4 11 *'  # 23:59 BRT do dia 03/11/2025;
-
+name: Github Actions - Trigger 1
+run-name: Running - Trigger 1
+on: [push, workflow_dispatch]
 jobs:
-  on-workflow-dispatch:
-    name: On Workflow Dispatch
+  on-push:
     runs-on: ubuntu-latest
     steps:
-      - name: Executando
+      - name: Comentário
         run: |
-          echo "Hello, World"
+          echo "Este é o workflow de Trigger 1"
