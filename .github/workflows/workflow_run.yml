@@ -2,7 +2,9 @@ name: Github Actions - Workflow run Basic Template
 run-name: Running - Basic Workflow Template
 on:
   workflow_run:
-    workflows: ["Github Actions - Trigger 1, Github Actions - Trigger 2"]
+    workflows:
+      - Github Actions - Trigger 1
+      - Github Actions - Trigger 2
     branches:
       - main
     types:

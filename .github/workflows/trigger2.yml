@@ -1,1 +1,10 @@
-criação
+name: Github Actions - Trigger 2
+run-name: Running - Trigger 2
+on: [push]
+jobs:
+  on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentário
+        run: |
+          echo "Este é o workflow de Trigger 2 Wesley"
