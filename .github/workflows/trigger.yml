@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Comentário
         run: |
-          echo "Este é o workflow de Trigger 1"
+          echo "Este é o workflow de Trigger 1 Wesley"
