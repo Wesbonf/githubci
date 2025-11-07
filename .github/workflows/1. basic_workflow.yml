@@ -1,0 +1,12 @@
+name: Github Actions - Workflow run Basic Template 
+run-name: Running - Basic Workflow Template
+on:
+  workflow_run:
+    workflows: ["Github Actions - Trigger 1"]
+jobs:
+  on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentário
+        run: |
+          echo "Este é o workflow básico que é acionado pelo Trigger 1"
