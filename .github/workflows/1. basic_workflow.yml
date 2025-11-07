@@ -3,6 +3,9 @@ run-name: Running - Basic Workflow Template
 on:
   workflow_run:
     workflows: ["Github Actions - Trigger 1"]
+    types:
+      - completed
+
 jobs:
   on-push:
     runs-on: ubuntu-latest
