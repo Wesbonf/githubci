@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["Github Actions - Trigger 1"]
     types:
-      - in_progress
+      - requested
 jobs:
   on-push:
     runs-on: ubuntu-latest
