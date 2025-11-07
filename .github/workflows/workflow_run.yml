@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Comentário
         run: |
-          echo "${{ vars.VAR_TEST }}"
+          echo "${{ secrets.test_secret }}"
