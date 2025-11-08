@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - main
-
+env:
+  test_env: "Variável de ambiente do repositório"
+  var1:  ${{ secrets.test_secret }}
+  var2:  ${{ vars.test_var }}
 jobs:
   on-push:
     runs-on: ubuntu-latest
     steps:
       - name: Comentário
         run: |
-          echo "${{ secrets.test_secret }}"
+          echo "Esta é uma variável de ambiente do repositório: "$test_env"
+          echo "Esta é uma variável secreta do repositório: "$var1"
+          echo "Esta é uma variável do repositório: "$var2"
