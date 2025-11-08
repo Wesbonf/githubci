@@ -1,19 +1,26 @@
-name: Github Actions - Configuração de variável de repositório
-run-name: Configurando variável de repositório
+name: Github Actions - Teste com dependência
+run-name: Running - Teste com dependência
 on:
   push:
-    branches:
-      - main
-env:
-  test_env: "Variável de ambiente do repositório"
-  var1:  ${{ secrets.test_secret }}
-  var2:  ${{ vars.test_var }}
+    workflow_dispatch:
+
 jobs:
-  on-push:
-    runs-on: ubuntu-latest
+  test_unit:
+    runs-on: ubuntu-20.04
     steps:
       - name: Comentário
-        run: |
-          echo "Esta é uma variável de ambiente do repositório: $test_env"
-          echo "Esta é uma variável secreta do repositório: ${var1}"
-          echo "Esta é uma variável do repositório: ${var2}"
+        run: echo "Este é o job de setup."
+
+  test_api:
+    needs: test_unit
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Comentário
+        run: echo "Este é o job de teste de API."
+
+  test_ui:
+    needs: [test_unit, test_api]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Comentário
+        run: echo "Este é o job de teste de UI."
