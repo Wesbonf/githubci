@@ -27,3 +27,17 @@ jobs:
           echo "Comentário após o erro"
 
 
+
+  job_3_always:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentário
+        run: |
+          echo "Comentário antes do erro"
+          exit 1  
+      - name: Comentário
+        if: always()
+        run: |
+          echo "Comentário após o erro"
+
+
