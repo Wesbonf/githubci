@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "Comentário antes do erro"
           exit 1  
-          continue-on-error: true
+        continue-on-error: true
       - name: Comentário
         run: |
           echo "Comentário após o erro"
