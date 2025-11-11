@@ -1,16 +1,20 @@
-name: Github Actions - Matrix Strategy
-run-name: Matrix Strategy
+name: Github Actions - Condicionais
+run-name: Running - ${{ github.event_name }} 
 on: [push, workflow_dispatch]
 
 jobs:
-  matrix_job:
+  if: 
+  on-push-only:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        navegador: [chrome, firefox, edge]
-        tag: [tag_1, tag_2, tag_3]
-        framework: [react, angular, vue]
-      fail-fast: false
     steps:
-      - name: Comentário inicial
-        run: echo ${{ matrix.navegador }}
+      - name: Comentário
+        run: echo ${{ github.event_name }}
+
+
+  on_workflow-dispatch-only:
+    if: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentário
+        run: |
+          echo ${{ github}}
