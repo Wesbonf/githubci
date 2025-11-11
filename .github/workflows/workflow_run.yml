@@ -3,7 +3,7 @@ run-name: Running - ${{ github.event_name }}
 on: [push, workflow_dispatch]
 
 jobs:
-  if: 
+  if:  ${{ github.event_name == 'push' }}   
   on-push-only:
     runs-on: ubuntu-latest
     steps:
@@ -12,7 +12,7 @@ jobs:
 
 
   on_workflow-dispatch-only:
-    if: 
+    if:  ${{ github.event_name == 'workflow_dispatch' }}    
     runs-on: ubuntu-latest
     steps:
       - name: Comentário
