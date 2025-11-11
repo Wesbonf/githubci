@@ -28,15 +28,15 @@ jobs:
 
 
 
-  job_3_always:
+  job_3_continue_on_error:
     runs-on: ubuntu-latest
     steps:
       - name: Comentário
         run: |
           echo "Comentário antes do erro"
           exit 1  
+          continue-on-error: true
       - name: Comentário
-        if: always()
         run: |
           echo "Comentário após o erro"
 
